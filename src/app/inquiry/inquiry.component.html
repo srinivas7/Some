@@ -1,0 +1,169 @@
+<div class="row">
+	<div class="container container-fluid">
+		<mat-card class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12">
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="row">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<h3 class="InquiryHeader">INQUIRY REPORT</h3>
+				</div>
+			</div>
+			<br />
+			<div class="row InquiryContent">
+				<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-12">
+					<angular2-multiselect [data]="Services" [(ngModel)]="ServiceHolder"
+						[settings]="InquirySettings" (ngModelChange)="onService($event)"
+						(onSelectAll)="onSelectAllServices($event)"
+						(onDeSelect)="GetSelectedForm()"> </angular2-multiselect>
+				</div>
+				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+					<span>
+						<button
+							class="btn btn-primary col-xl-4 col-lg-2 col-md-4 col-sm-4 col-xs-4"
+							(click)="GetSelectedForm()">Go</button>
+					</span>
+				</div>
+				<br />
+				<div style="text-align: left; margin-left: 20px;" *ngIf="errorText">
+					<br /> <br /> <span> <label class="help-block ErrorMessage">{{errorText}}</label>
+					</span>
+				</div>
+			</div>
+			<br />
+			<div class="row" *ngIf="ServiceBool.InquiryService">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12">
+						<mat-card
+							class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<form class="example-form" (ngSubmit)="GetCase(InquiryList)"
+							#InquiryList="ngForm" novalidate>
+							<div *ngIf="ServiceBool.InquiryByCaseNo">
+								<mat-form-field class="example-full-width"> <input
+									matInput placeholder="CASE NO:" [(ngModel)]="InquiryCaseNo"
+									name="InquiryCaseNoInput" #InquiryCaseNoInput="ngModel"
+									[maxlength]="CaseNoMaxLength" [minlength]="CaseNoMinLength"
+									required /> </mat-form-field>
+								<span
+									*ngIf="!InquiryCaseNoInput.valid && InquiryCaseNoInput.touched">
+									<span class="help-block ErrorMessage"
+									*ngIf="InquiryCaseNoInput.errors.required">Case No
+										Required</span> <span class="help-block ErrorMessage"
+									*ngIf="InquiryCaseNoInput.errors.minlength">Case No
+										Should be of minimum 8 characters</span> <span
+									class="help-block ErrorMessage"
+									*ngIf="InquiryCaseNoInput.errors.maxlength">Case No
+										Should be of maximum 8 characters</span>
+								</span>
+							</div>
+							<div *ngIf="ServiceBool.InquiryByFName">
+								<mat-form-field class="example-full-width"> <input
+									matInput placeholder="First Name:"
+									[(ngModel)]="InquiryFirstName" name="InquiryFirstNameInput"
+									#InquiryFirstNameInput="ngModel" required /> </mat-form-field>
+								<span
+									*ngIf="!InquiryFirstNameInput.valid && InquiryFirstNameInput.touched">
+									<span class="help-block ErrorMessage"
+									*ngIf="InquiryFirstNameInput.errors.required">First Name
+										Required</span>
+								</span>
+							</div>
+							<div *ngIf="ServiceBool.InquiryBySrCode">
+								<mat-form-field class="example-full-width"> <input
+									matInput placeholder="SR Code:" [(ngModel)]="InquirySrCode"
+									name="InquirySrCodeInput" #InquirySrCodeInput="ngModel"
+									required /> </mat-form-field>
+								<span
+									*ngIf="!InquirySrCodeInput.valid && InquirySrCodeInput.touched">
+									<span class="help-block ErrorMessage"
+									*ngIf="InquirySrCodeInput.errors.required">SR Code
+										Required</span>
+								</span>
+							</div>
+							<div *ngIf="ServiceBool.InquiryByLName">
+								<mat-form-field class="example-full-width"> <input
+									matInput placeholder="Last Name:" [(ngModel)]="InquiryLastName"
+									name="InquiryLastNameInput" #InquiryLastNameInput="ngModel"
+									required /> </mat-form-field>
+								<span
+									*ngIf="!InquiryLastNameInput.valid && InquiryLastNameInput.touched">
+									<span class="help-block ErrorMessage"
+									*ngIf="InquiryLastNameInput.errors.required">Last Name
+										Required</span>
+								</span>
+							</div>
+							<div *ngIf="ServiceBool.InquiryByInvoiceNumber">
+								<mat-form-field class="example-full-width"> <input
+									matInput placeholder="Invoice Number:"
+									[(ngModel)]="InvoiceNumber" name="InvoiceNumberInput"
+									#InvoiceNumberInput="ngModel" required /> </mat-form-field>
+								<span
+									*ngIf="!InvoiceNumberInput.valid && InvoiceNumberInput.touched">
+									<span class="help-block ErrorMessage"
+									*ngIf="InvoiceNumberInput.errors.required">Invoice
+										Number Required</span>
+								</span>
+							</div>
+							<div *ngIf="ServiceBool.InquiryBySSN">
+								<mat-form-field class="example-full-width"> <input
+									matInput placeholder="SSN NO:" [(ngModel)]="InquirySSN"
+									name="InquirySSNVDTN" #InquirySSNVDTN="ngModel"
+									[minlength]="SSNMinLength" [maxlength]="SSNMaxLength" required />
+								</mat-form-field>
+								<span *ngIf="!InquirySSNVDTN.valid && InquirySSNVDTN.touched">
+									<span class="help-block ErrorMessage"
+									*ngIf="InquirySSNVDTN.errors.required">SSN Required</span> <span
+									class="help-block ErrorMessage"
+									*ngIf="InquirySSNVDTN.errors.minlength">SSN Should be
+										minimum of 4 characters</span> <span class="help-block ErrorMessage"
+									*ngIf="InquirySSNVDTN.errors.maxlength">SSN Should be
+										maximum of 4 characters</span>
+								</span>
+							</div>
+							<div *ngIf="ServiceBool.InquiryByStatusCode">
+								<mat-form-field class="example-full-width"> <mat-select
+									placeholder="Status Code" [(ngModel)]="InquiryStatusCode"
+									name="InquiryStatusCodeInput" #InquiryStatusCodeInput="ngModel"
+									required> <mat-option
+									*ngFor="let s of StatusCodes | arraySort" [value]="s.statusCode">{{s.statusCode}} - {{s.viewValue}}</mat-option>
+								</mat-select> </mat-form-field>
+								<span
+									*ngIf="!InquiryStatusCodeInput.valid && InquiryStatusCodeInput.touched">
+									<span class="help-block ErrorMessage"
+									*ngIf="InquiryStatusCodeInput.errors.required"> Please
+										Select The Status Code </span>
+								</span>
+							</div>
+							<div *ngIf="ServiceBool.InquiryByOpenClose">
+								<mat-form-field class="example-full-width"> <mat-select
+									placeholder="Case Status" [(ngModel)]="InquiryCaseStatus"
+									name="InquiryCaseStatusInput" #InquiryCaseStatusInput="ngModel"
+									required> <mat-option value="OPEN">Open</mat-option>
+								<mat-option value="CLOSED">Close</mat-option> </mat-select> </mat-form-field>
+								<span
+									*ngIf="!InquiryCaseStatusInput.valid && InquiryCaseStatusInput.touched">
+									<span class="help-block ErrorMessage"
+									*ngIf="InquiryCaseStatusInput.errors.required"> Please
+										Select The Case Status </span>
+								</span>
+							</div>
+							<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+								<button class="btn btn-primary InquiryBtns" type="submit"
+									[disabled]="!InquiryList.valid">Submit</button>
+							</div>
+						</form>
+						<span class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+							<button class="btn btn-warning InquiryBtns"
+								(click)="OnReset(); InquiryList.reset()">Reset</button>
+						</span> <br />
+
+						<br />
+						<br />
+
+						</mat-card>
+					</div>
+				</div>
+			</div>
+			<br />
+		</div>
+		</mat-card>
+	</div>
+</div>

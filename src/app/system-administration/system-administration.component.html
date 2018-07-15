@@ -1,0 +1,110 @@
+<div class="row">
+	<div class="container container-fluid">
+		<!-- <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-xs-12"
+			class="systemHeader"> -->
+		<h3 class="systemHeader">User Folder Access Assignment</h3>
+	</div>
+	<div class="row isTableDesign" ngif="isTable">
+		<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 UserListTable">
+			<table class="table table-responsive table-bordered">
+				<thead>
+					<tr>
+						<th id="bgcolor">DMCS Users</th>
+					</tr>
+				</thead>
+				<tr height="5px"></tr>
+				<tbody>
+					<tr>
+						<td>
+							<div class="SysAdminUsersList">
+								<table class="table table-responsive table-bordered">
+									<tr *ngFor="let systemAdmin of SystemAdminArray">
+										<td>{{systemAdmin.userID}}</td>
+										<td colspan="3"><a
+											(click)="DMCSSelectedUser(systemAdmin.userID)">{{systemAdmin.userName}}</a>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div *ngIf="isAvailable" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 UserListTable">
+			<table class="table table-bordered table-responsive">
+			<thead>
+					<tr>
+						<th>Available Folders for {{UserId}}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<div class="SysAdminUsersList">
+								<table>
+									<tbody id="AvailableTable">
+									</tbody>
+								</table>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			
+			</table>
+		</div>
+		<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2 SysBtn">
+			<button
+				class="btn btn-default SysAdminBtn
+		               col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4" (click)="DMCSAssign()">Assign</button>
+			<button
+				class="btn btn-default SysAdminBtn
+		              col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4" (click)="DMCSUnAssign()">UnAssign</button>
+		</div>
+		<div *ngIf="isAssigned"
+			class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3 UserListTable">
+			<table class="table table-bordered table-responsive">
+				<thead>
+					<tr>
+						<th>Assigned Folders for {{UserId}}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							<div class="SysAdminUsersList">
+								<table>
+									<tbody id="AssignedTable">
+									</tbody>
+								</table>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>			
+</div>
+
+  <div *ngIf="firstDropDown">
+	<select (change)="onSelectFDD($event.target.value)">
+	  <option *ngFor="let obj of data" value= {{obj.id}}>
+		{{obj.name}}
+	  </option>
+	</select>
+	<button (click)="showSecondDD()">Next</button>
+  </div>
+  <div *ngIf="secondDropDown">
+	<select (change)="onSelectSDD($event.target.value)">
+	  <option *ngFor="let obj of data" value= {{obj.id}}>
+		{{obj.name}}
+	  </option>
+	</select>
+	<button (click)="showFirstDD()">Back</button>
+	<button (click)="secondNext()">Next</button>
+  </div>
+  <file-upload *ngIf="showFileUpload" (fileUploadToSDD)="showSecondDD()"></file-upload>
+</div>
+
+
+
+

@@ -1,0 +1,15 @@
+<nav id="leftNavigation">
+  <ul class="nav nav-pills nav-stacked">
+    <li><a routerLink="Inquiry">Inquiry</a></li>
+    <li><a routerLink="casehistory">Case History</a></li>
+    <li><a id="OnReports" (click)="OnReportNavigation()">Reports</a></li>
+    <li *ngIf="IsAdmin"><a (click)="OnUserReports()">User Reports</a></li>
+    <li><a routerLink="UserIdUnlockComponent">User ID Unlock</a></li>
+    <li><a routerLink="graphRepresentation">Graphs</a></li>
+    <li><a routerLink="dashBoard">Dashboard</a></li>
+    <li *ngIf="IsAdmin"><a (click)="OnSysAdmin()">System Administration</a></li>
+    <!-- <li><button class="btn btn-warning" (click)="OnLogOff()">Log Off</button></li> -->
+    <!-- <li><a routerLink="PdfDownload">PDF Download</a></li> -->
+  </ul>   
+</nav>
+ <app-help></app-help>

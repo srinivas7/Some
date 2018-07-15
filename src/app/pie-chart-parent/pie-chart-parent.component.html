@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h3 class="DashboardHeader">Welcome To Dashboard</h3>
+  </div>
+
+  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <table class="table table-responsive table-bordered">
+               <tr>
+                      <th class="DashboardTableHeader">DEBT_TYPE</th>
+                      <td class="CaseHlstoryTable">{{PSCDashBoardArray.debtType}}</td>
+               </tr>
+               <tr>
+                      <th class="DashboardTableHeader">REGION_CODE</th>
+                      <td class="CaseHistoryTable">{{PSCDashBoardArray.regionCode}}</td>
+               </tr>
+               <tr>
+                      <th class="DashboardTableHeader">BALANCE</th>
+                      <td class="CaseHistoryTable">{{PSCDashBoardArray.balance}}</td>
+               </tr>
+               <tr>
+                      <th class="DashboardTableHeader">DEBT_ORGINAL_LOAN</th>
+                      <td class="CaseHistoryTable">{{PSCDashBoardArray.debtOriginalLoan}}</td>
+               </tr>
+               <tr>
+                      <th class="DashboardTableHeader">DEBT_PRINCIPAL_TYPE</th>
+                      <td class="CaseHistoryTable">{{PSCDashBoardArray.debtPrincipal}}</td>
+               </tr>
+               <tr>
+                      <th class="DashboardTableHeader">DEBT_INTEREST_CHARGES</th>
+                      <td class="CaseHistoryTable">{{PSCDashBoardArray.debtInterestCharges}}</td>
+               </tr>
+               <tr>
+                      <th class="DashboardTableHeader">DATE</th>
+                      <td class="CaseHistoryTable">{{PSCDashBoardArray.date}}</td>
+               </tr>
+        </table>
+  </div>
+</div>
+
+
+
+ <pie-chart [chartData]="obj"></pie-chart>

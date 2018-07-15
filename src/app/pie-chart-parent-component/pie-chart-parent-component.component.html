@@ -1,0 +1,74 @@
+<div class="row">
+	<div class="container container-fluid">
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="row">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<h3 class="DashboardHeader">Welcome To Dashboard</h3>
+				</div>
+			</div>
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<span class="DashboardHeading"> DEBT_TYPE :&nbsp;
+					{{PSCDashBoardArray.debtType | uppercase}} </span> <br> <span
+					class="DashboardHeadingDate"> DATE :&nbsp;
+					{{PSCDashBoardArray.date}}</span> <span class="DashboardHeadingRegionCode">
+					REGION_CODE: &nbsp; {{PSCDashBoardArray.regionCode}}</span>
+			</div>
+			<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">				
+				<table class="table table-responsive table-bordered"
+					id="DashboardTable">
+					<tr>
+						<th class="DashboardTableHeader">BALANCE</th>
+						<td class="CaseHistoryTable">{{PSCDashBoardArray.balance}}</td>
+					</tr>
+					<tr>
+						<th class="DashboardTableHeader">DEBT_ORGINAL_LOAN</th>
+						<td class="CaseHistoryTable">{{PSCDashBoardArray.debtOriginalLoan}}</td>
+					</tr>
+					<tr>
+						<th class="DashboardTableHeader">DEBT_PRINCIPAL_TYPE</th>
+						<td class="CaseHistoryTable">{{PSCDashBoardArray.debtPrincipal}}</td>
+					</tr>
+					<tr>
+						<th class="DashboardTableHeader">DEBT_INTEREST_CHARGES</th>
+						<td class="CaseHistoryTable">{{PSCDashBoardArray.debtInterestCharges}}</td>
+					</tr>
+				</table>
+			</div>
+      
+      <div class="card data-sec">
+			  <div class="card-body data-container">
+			  	<div class="chart-info">
+				    <div class="card-title">BALANCE</div>
+	    			<div class="card-subtitle mb-2 text-muted">{{PSCDashBoardArray.balance}}</div>
+    			</div>
+    			<div class="chart-info">
+				    <div class="card-title">DEBT_ORGINAL_LOAN</div>
+	    			<div class="card-subtitle mb-2 text-muted">{{PSCDashBoardArray.debtOriginalLoan}}</div>
+    			</div>
+    			<div class="chart-info">
+				    <div class="card-title">DEBT_PRINCIPAL_TYPE</div>
+	    			<div class="card-subtitle mb-2 text-muted">{{PSCDashBoardArray.debtPrincipal}}</div>
+    			</div>
+    			<div class="chart-info">
+				    <div class="card-title">DEBT_INTEREST_CHARGES</div>
+	    			<div class="card-subtitle mb-2 text-muted">{{PSCDashBoardArray.debtInterestCharges}}</div>
+    			</div>
+			  </div>
+			</div>
+      
+			<div class="pie-chart-sec"><app-pie-chart-component [chartData]="PSCDashBoardArray"></app-pie-chart-component> </div>
+		</div>
+	</div>
+	<!-- <div class="footer container container-fluid">
+	<button class="btn btn-default pull-left" id ="previousBtn" (click)="dbPrevNext('Previous')">&#171;</button>
+	<button class="btn btn-default pull-right " id ="nextBtn" (click)="dbPrevNext('Next')">&#187;</button>
+	</div> -->
+	</div>
+	<br/>
+	
+	 
+
+	<!-- <high-chart></high-chart> -->
+
+	<fusion-3d-chart [chartData]="PSCDashBoardArray"></fusion-3d-chart>
+

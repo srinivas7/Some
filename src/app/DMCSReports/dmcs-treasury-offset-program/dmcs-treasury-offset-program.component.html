@@ -1,0 +1,74 @@
+<div class="row">
+	<div class="container container-fluid">
+		<mat-card class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12">
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="row">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<h3 class="DMCS-WeeklyHeader">Treasury Offset Program Reports</h3>
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<mat-tab-group> <mat-tab
+							label="Production Reports"> <mat-card
+							class="col-xl-12 col-lg-12 col-md-12 col-sm-12 co-xs-12">
+						<div>
+							<h4>{{DMCStopTitle.Production}}</h4>
+							<button class="btn btn-primary pull-right"
+								*ngIf="ProductionUploadBtn" (click)="DmcsUpload('Production')">Upload</button>
+						</div>
+						<table class="table table-bordered table-striped">
+							<thead>
+								<tr>
+									<th>File No</th>
+									<th>Report Name</th>
+									<th>File Size</th>
+									<th>Modified Time</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let i of Production">
+									<td>{{i.listOrder}}</td>
+									<td><a (click)="DownloadPDF(i)"> {{i.fileDesc}}</a> &nbsp;
+										<span *ngIf="i.deleteYN">
+											<button class="btn btn-danger" (click)="alertMessage(i)">&#9851;</button>
+									</span></td>
+									<td>{{i.sFileSize}}</td>
+									<td>{{i.lastModified}}
+								</tr>
+							</tbody>
+						</table>
+						</mat-card> </mat-tab> <mat-tab label="Ad Hoc Reports"> <mat-card
+							class="col-xl-12 col-lg-12 col-md-12 col-sm-12 co-xs-12">
+						<div>
+							<h4>{{DMCStopTitle.Adhoc}}</h4>
+							<button class="btn btn-primary pull-right" *ngIf="AdhocUploadBtn"
+								(click)="DmcsUpload('Adhoc')">Upload</button>
+						</div>
+						<table class="table table-bordered table-striped">
+							<thead>
+								<tr>
+									<th>File No</th>
+									<th>Report Name</th>
+									<th>File Size</th>
+									<th>Modified Time</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let i of Adhoc">
+									<td>{{i.listOrder}}</td>
+									<td><a (click)="DownloadPDF(i)"> {{i.fileDesc}}</a> &nbsp;
+										<span *ngIf="i.deleteYN">
+											<button class="btn btn-danger" (click)="alertMessage(i)">&#9851;</button>
+									</span></td>
+									<td>{{i.sFileSize}}</td>
+									<td>{{i.lastModified}}
+								</tr>
+							</tbody>
+						</table>
+						</mat-card> </mat-tab> </mat-tab-group>
+					</div>
+				</div>
+			</div>
+			<br />
+		</div>
+		</mat-card>
+	</div>
+</div>

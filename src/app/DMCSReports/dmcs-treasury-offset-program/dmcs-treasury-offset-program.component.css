@@ -1,0 +1,11 @@
+.DMCS-WeeklyHeader{
+    text-align: center !important;
+    font-weight: bold !important;
+}
+a{
+	cursor:pointer !important; 
+}
+/deep/.mat-tab-label, /deep/.mat-tab-label-active{
+	font-size:larger !important;
+	font-weight: bold !important;
+}

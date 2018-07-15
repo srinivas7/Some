@@ -1,0 +1,139 @@
+<div class="row">
+	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"
+		class="DMCS-OutboundHeader">
+		<h3 class="Heading">Adhoc Reports</h3>
+	</div>
+	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 com-xs-12">
+		<mat-tab-group> <mat-tab *ngFor="let x of SubFolders; let i = index;" label="{{x.folderName}}">
+		<mat-card>
+		<mat-card-header>
+		<button class="Uploaderbtn" *ngIf="x.uploadYN" (click)="OnFileUploadSection(x,i)"  class="btn btn-primary pull-right">Upload</button>
+	    <br/>
+		</mat-card-header>
+		<mat-card-content *ngFor="let z of x.folderFiles; let k = index;">		
+		<accordion>
+		<accordion-group *ngIf="z.subFolders !== null">
+		 <div accordion-heading class="clearfix">
+       {{z.fileName}}
+      <span *ngIf="!IsOpen" class="badge badge-secondary float-right pull-right DownArrow">&#10095;</span>
+      <span *ngIf="IsOpen" class="badge badge-secondary float-right pull-right UpArrow">&#10095;</span>
+          </div> 
+          <mat-card *ngFor="let h of z.subFolders; let j = index;">
+          <mat-card-header>
+		<button class="Uploaderbtn" *ngIf="x.uploadYN" (click)="UploadFileSubfolder(x,h,i,j)"  class="btn btn-primary pull-right">Upload</button>
+	    <br/>
+		</mat-card-header>
+          <mat-card-content *ngFor="let r of h.folderFiles let c = index;" >          
+          <accordion>
+          <accordion-group *ngIf="r.subFolders !== null">
+          <div accordion-heading class="clearfix">
+       {{r.fileName}}
+      <span *ngIf="!IsOpen" class="badge badge-secondary float-right pull-right DownArrow">&#10095;</span>
+      <span *ngIf="IsOpen" class="badge badge-secondary float-right pull-right UpArrow">&#10095;</span>
+          </div> 
+          <mat-card>       
+          <mat-card-content *ngFor="let d of r.subFolders; let o = index;">
+            <mat-card-header>
+          <button class="Uploaderbtn" *ngIf="x.uploadYN" (click)="OnFileUploadSubSection(x,h,d,i,c,o)"  class="btn btn-primary pull-right">Upload</button>
+	    <br/>
+          </mat-card-header>
+           <div style="height:300px; overflow-y: scroll;">
+           <mat-error *ngIf="d.folderFiles[o].fileName === null"> No Records Available </mat-error>
+          <table *ngIf="d.folderFiles[o].fileName !== null" class="table table-bordered table-responsive table-striped table-hover">
+            <thead>
+				 <tr>
+				 <th>SNO</th>				
+				<th>Report Name</th>
+				<th>File Size</th>
+				<th>Modified Time</th>				 
+				 </tr>
+				 </thead>
+				 <tbody  *ngFor="let b of d.folderFiles; let n = index;">				 				  			  
+				  <tr *ngIf="b.fileName !== null">
+				  <td>{{n+1}}</td>
+				  <td><a (click)="DownloadFile(x,b)"> {{b.fileName}}</a>
+								 &nbsp;
+								<span *ngIf="b.deleteYN">
+								<button class="btn btn-danger" (click)="alertMessage(x,b,i,n)">&#9851;</button>
+								</span>
+								</td>								
+								<td>{{b.sFileSize? b.sFileSize: 0}} KB</td>
+								<td>{{b.lastModified}}</td>								
+				  </tr>				 
+				 </tbody>
+				 </table> 
+          </div>
+          </mat-card-content>
+          </mat-card>
+          </accordion-group>
+          </accordion>  
+               </mat-card-content>
+                 <mat-card-content>
+          <mat-card *ngIf="h.folderFiles[j].subFolders === null">
+          <div>
+           <table class="table table-bordered table-responsive table-striped table-hover">
+            <thead>
+				 <tr>
+				 <th>SNO</th>				
+				<th>Report Name</th>
+				<th>File Size</th>
+				<th>Modified Time</th>				 
+				 </tr>
+				 </thead>
+				 <tbody *ngFor="let p of h.folderFiles; let q =index">				 				  			  
+				  <tr *ngIf="p.fileName !== null && p.subFolders === null">
+				  <td>{{q+1}}</td>
+				  <td><a (click)="DownloadFile(x,p)"> {{p.fileName}}</a>
+								 &nbsp;
+								<span *ngIf="p.deleteYN">
+								<button class="btn btn-danger" (click)="alertMessage(x,p,i,q)">&#9851;</button>
+								</span>
+								</td>								
+								<td>{{p.sFileSize? p.sFileSize: 0}} KB</td>
+								<td>{{p.lastModified}}</td>								
+				  </tr>				 
+				 </tbody>
+				 </table> 
+          </div>
+   
+          </mat-card>          
+          </mat-card-content>                  
+          </mat-card>
+		</accordion-group>
+		</accordion>
+		</mat-card-content>
+		
+		<mat-card-content *ngIf="x.folderFiles[i].subFolders === null">
+		
+		<table *ngIf="x.folderFiles[i].fileName !== null" class="table table-bordered table-responsive table-striped table-hover">
+            <thead>
+				 <tr>
+				 <th>SNO</th>				
+				<th>Report Name</th>
+				<th>File Size</th>
+				<th>Modified Time</th>				 
+				 </tr>
+				 </thead>
+				 <tbody  *ngFor="let c of x.folderFiles; let v = index;" >				 				  			  
+				  <tr *ngIf="c.fileName !== null && c.subFolders === null">
+				  <td>{{v+1}}</td>
+				  <td><a (click)="DownloadFile(x,c)"> {{c.fileName}}</a>
+								 &nbsp;
+								<span *ngIf="c.deleteYN">
+								<button class="btn btn-danger" (click)="alertMessage(x,c,i,v)">&#9851;</button>
+								</span>
+								</td>								
+								<td>{{c.sFileSize? c.sFileSize: 0}} KB</td>
+								<td>{{c.lastModified}}</td>								
+				  </tr>				 
+				 </tbody>
+				 </table> 
+		</mat-card-content>
+		
+		</mat-card>
+		</mat-tab>
+		</mat-tab-group>
+		</div>
+		</div>
+		
+		

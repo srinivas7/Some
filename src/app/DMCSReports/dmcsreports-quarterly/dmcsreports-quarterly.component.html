@@ -1,0 +1,206 @@
+<div class="row">
+
+	<div class="container container-fluid">
+
+		<mat-card class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12">
+
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+			<div class="row" class="align">
+
+				<h3 class="DMCS-quarterlyHeader">DMCS Quarterly Reports</h3>
+
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+					<mat-tab-group> <mat-tab label="Job DMKQTR04">
+					<mat-card class="col-xl-12 col-lg-12 col-md-12 col-sm-12 co-xs-12">
+					<div>
+						<h4>{{DMCSQuarterlyTitle.DMKQTR04}}</h4>
+						<br />
+						<button class="btn btn-primary pull-right"
+							*ngIf="DMKQTR04UploadBtn" (click)="DmcsUpload('DMKQTR04')">Upload</button>
+					</div>
+					<br/>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>File No</th>
+								<th>Report Name</th>
+								<th>File Size</th>
+								<th>Modified Time</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let i of DMKQTR04">
+								<td>{{i.listOrder}}</td>
+								<td><a (click)="DownloadPDF(i)"> {{i.fileDesc}}</a>
+								&nbsp;
+								<span *ngIf="i.deleteYN">
+								<button class="btn btn-danger" (click)="alertMessage(i)">&#9851;</button>
+								</span>
+								</td>
+								
+								<td>{{i.sFileSize}}</td>
+								<td>{{i.lastModified}}
+							</tr>
+						</tbody>
+					</table>
+					</mat-card> </mat-tab> <mat-tab label="Job DMKQTR05"> <mat-card
+						class="col-xl-12 col-lg-12 col-md-12 col-sm-12 co-xs-12">
+					<div>
+						<h4>{{DMCSQuarterlyTitle.DMKQTR05}}</h4>
+
+						<button class="btn btn-primary pull-right"
+							*ngIf="DMKQTR05UploadBtn" (click)="DmcsUpload('DMKQTR05')">Upload</button>
+					</div>
+					<br/>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>File No</th>
+								<th>Report Name</th>
+								<th>File Size</th>
+								<th>Modified Time</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let i of DMKQTR05">
+								<td>{{i.listOrder}}</td>
+								<td><a (click)="DownloadPDF(i)"> {{i.fileDesc}}</a>
+								&nbsp;
+								<span *ngIf="i.deleteYN">
+								<button class="btn btn-danger" (click)="alertMessage(i)">&#9851;</button>
+								</span>
+								</td>								
+								<td>{{i.sFileSize}}</td>
+								<td>{{i.lastModified}}
+							</tr>
+						</tbody>
+					</table>
+					</mat-card> </mat-tab> <mat-tab label="Job DMKQTR06"> <mat-card
+						class="col-xl-12 col-lg-12 col-md-12 col-sm-12 co-xs-12">
+					<div>
+						<h4>{{DMCSQuarterlyTitle.DMKQTR06}}</h4>
+						<button class="btn btn-primary pull-right"
+							*ngIf="DMKQTR06UploadBtn" (click)="DmcsUpload('DMKQTR06')">Upload</button>
+					</div>
+					<br/>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>File No</th>
+								<th>Report Name</th>
+								<th>File Size</th>
+								<th>Modified Time</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let i of DMKQTR06">
+								<td>{{i.listOrder}}</td>
+								<td><a (click)="DownloadPDF(i)"> {{i.fileDesc}}</a>
+								<span *ngIf="i.deleteYN">
+								<button class="btn btn-danger" (click)="alertMessage(i)">&#9851;</button>
+								</span>
+								</td>
+								<td>{{i.sFileSize}}</td>
+								<td>{{i.lastModified}}
+							</tr>
+						</tbody>
+					</table>
+					</mat-card> </mat-tab> <mat-tab label="Job DMKQTR07"> <mat-card
+						class="col-xl-12 col-lg-12 col-md-12 col-sm-12 co-xs-12">
+					<div>
+						<h4>{{DMCSQuarterlyTitle.DMKQTR07}}</h4>
+						<button class="btn btn-primary pull-right"
+							*ngIf="DMKQTR07UploadBtn" (click)="DmcsUpload('DMKQTR07')">Upload</button>
+					</div>
+					<br/>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>File No</th>
+								<th>Report Name</th>
+								<th>File Size</th>
+								<th>Modified Time</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let i of DMKQTR07">
+								<td>{{i.listOrder}}</td>
+								<td><a (click)="DownloadPDF(i)"> {{i.fileDesc}}</a>
+								&nbsp;
+								<span *ngIf="i.deleteYN">
+								<button class="btn btn-danger" (click)="alertMessage(i)">&#9851;</button>
+								</span>
+								</td>
+								<td>{{i.sFileSize}}</td>
+								<td>{{i.lastModified}}
+							</tr>
+						</tbody>
+					</table>
+					</mat-card> </mat-tab> </mat-tab-group>
+
+				</div>
+
+			</div>
+
+			<br />
+
+		</div>
+		<!-- <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" class="Upload">
+         <input type="file" #fileInput placeholder="Upload file..." />
+         <button type="button" (click)="Upload()">Upload</button>
+         </div> --> </mat-card>
+
+	</div>
+
+</div>
+
+
+
+
+
+
+
+
+<!-- <div class="row">
+
+<div class="container container-fluid">
+
+<mat-card class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12">
+
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+<div class="row">
+
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" class="DMCS-quarterlyHeader">
+
+<h3> DMCS Quarterly Reports</h3>
+
+</div>
+
+</div>
+
+<br/>
+
+<div class="row">
+
+<div class="btn-group btn"></div>
+
+<button>Job DMKQTR04</button>
+
+<button>Job DMKQTR05</button>
+
+<button>Job DMKQTR06</button>
+
+<button>Job DMKQTR07</button>
+
+</div>
+
+    </div>
+
+</mat-card>
+
+</div>
+
+</div> -->

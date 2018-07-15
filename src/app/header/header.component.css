@@ -1,0 +1,49 @@
+#PSCLogo{
+    top:0px !important;
+    left:-20px !important;
+}
+#projTitle{
+    color:#01539c;
+    top:15px !important;
+    font-size: xx-large;
+    font-weight: bold !important;
+    margin-left: 80px !important;
+    right:-15px !important;
+   
+}
+.userSession{
+    color: #01539c;
+    font-size: medium;
+
+}
+.userDetails{
+	margin-top: 25px !important;
+	float: none !important;
+	font-weight: bold !important;
+	font-size: medium !important;
+	 }
+	
+.UserOptions{ float: right !important;}
+.PscSearchForm{
+    margin-top:0px !important;
+}
+
+@media screen and (min-width: 1200px) and (max-width:1500px){
+    #projTitle{
+        color:#01539c;
+        font-size:x-large !important;
+        font-weight: bold;
+      
+    } 
+}
+@media screen and (max-width:1199px) {
+    #projTitle{
+        visibility: hidden !important;
+    }
+    #PSCLogo{
+        visibility: hidden !important;
+    }
+    #DMCSUserForm{
+        visibility: hidden !important;
+    }
+}

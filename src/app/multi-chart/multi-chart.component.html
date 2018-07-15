@@ -1,0 +1,36 @@
+<nav class="navbar">
+  <div class="baner-title">
+    <h3>Debt Collection Center Receivable status</h3>
+    </div>
+</nav>
+
+<div id="main">
+  <div class="mybox" id="colorsbox">
+    <div class="content-title" id ="bar">
+  <div class="debtWidth">
+      <p  id="receivalbes" class="list-group-item-success">STATUS :&nbsp;
+      {{ status | uppercase}} 
+  </div>
+  
+    </div> 
+<div class="slide">
+  <button title="Previous" class="btn btn-default pull-left"
+      id="downBtn" (click)="renderPreviousGraph(status)">&#171;</button>
+  <button title="Next" class="btn btn-default pull-right " id="upBtn"
+      (click)="renderNextGraph(status)">&#187;</button>
+</div>
+    <div class="chart" style="width:50%; height:384px">
+    <canvas baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          [chartType]="barChartType"
+         ></canvas> 
+         </div>
+    <div >
+
+</div>
+
+  </div><br/>  
+</div>

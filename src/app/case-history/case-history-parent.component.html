@@ -1,0 +1,128 @@
+<div class="row">
+	<div class="container container-fluid">
+		<app-case-history (SelectedServiceValue)=" OnGetCaseChange($event)"
+			(NoCase)="OnGetCaseChange($event)"
+			(SelectedServiceReset)="OnGetReset($event)"
+			></app-case-history>
+	</div>
+	<app-case-history [caseHistory]="some"></app-case-history>
+</div>
+<br />
+
+<div class="row">
+	<div class="container-fluid">
+		<div
+			class="col-lg-7 col-md-7 col-sm-12 col-xs-12 PreloaderAfterMessage"
+			*ngIf="isRequested">
+			<span> Processing Request......Please Wait!!!</span>
+		</div>
+		<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" *ngIf="isTable">
+			<b class="Notfound">There is no record found </b>
+		</div>
+		<div id="CasehistoryTableParent">
+			<div class="row" *ngIf="CaseHistoryCaseArray.length > 0">
+				<div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-xs-12">
+					<div class="pull-right">
+						<button class="btn btn-default" (click)="OnPdfDownload()">Save
+							As Pdf</button>
+						<button class="btn btn-default" (click)="OnExcelDownload()">
+							Save As Excel</button>
+						<button class="btn btn-default" (click)="Onprint()">Print</button>
+					</div>
+				</div>
+				<br /> <br />
+				<div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-xs-12"
+					#CasehistoryTable>
+					<mat-card>
+					<div class="row">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+							<div
+								class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 CaseHistoryTableFormHeader">
+								<h1 id="iByCaseno">{{CaseHistoryHeader}}</h1>
+							</div>
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<span class="pull-left btn btn-default"> FirstName
+									:&nbsp; {{CaseHistoryfirstName}} </span> <span
+									class="NameSpacer pull-left btn btn-default"> LastName
+									:&nbsp; {{CaseHistorylastName}}</span> <span
+									class="NameSpacer pull-left btn btn-default"> SSN:
+									&nbsp; {{CaseHistorySSN}}</span> <span
+									class="NameSpacer pull-left btn btn-default"> Status:
+									&nbsp; {{CaseHistoryStatus}}</span>
+								<button class="pull-right btn btn-default">Balance:
+									&nbsp; {{totalBalance | currency}}</button>
+							</div>
+						</div>
+					</div>
+					<br />
+					<table id="CaseHistoryTable"
+						class="table table-responsive table-bordered">
+						<thead>
+							<tr>
+								<th>
+									<h4 class="CaseHistoryTableFormHeader">Transaction History</h4>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<!-- start -->
+									<div class="col-xl-10 col-lg-12 col-md-10 col-sm-12 col-xs-12">
+										<table class="table table-responsive table-bordered">
+											<thead>
+												<tr>
+													<th class="CaseHistoryTableHeader">TRANCODE</th>
+													<th class="CaseHistoryTableHeader">POSTDATE</th>
+													<th class="CaseHistoryTableHeader">SCHEDULE</th>
+													<th class="CaseHistoryTableHeader">ITEMNO</th>
+													<th class="CaseHistoryTableHeader">SIXMON TYPE</th>
+													<th class="CaseHistoryTableHeader">PRINCIPAL</th>
+													<th class="CaseHistoryTableHeader">INTEREST</th>
+													<th class="CaseHistoryTableHeader">OTHER</th>
+													<th class="CaseHistoryTableHeader">TOTAL</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr
+													*ngFor="let DmcsB of CaseHistoryCaseArray
+                                                    | paginate:{itemsPerPage: paginateValue,totalItems:CaseHistoryCaseArray.length, currentPage: p}">
+													<td class="CaseHistoryTable">{{DmcsB.tranCode}}</td>
+													<td class="CaseHistoryTable">{{DmcsB.postDate}}</td>
+													<td class="CaseHistoryTable">{{DmcsB.schedule}}</td>
+													<td class="CaseHistoryTable">{{DmcsB.itemNo}}</td>
+													<td class="CaseHistoryTable">{{DmcsB.sixmonType}}</td>
+													<td class="CaseHistoryTable">{{DmcsB.principal |
+														currency}}</td>
+													<td class="CaseHistoryTable">{{DmcsB.interest |
+														currency}}</td>
+													<td class="CaseHistoryTable">{{DmcsB.other |
+														currency}}</td>
+													<td class="CaseHistoryTable">{{DmcsB.total |
+														currency}}</td>
+												</tr>
+											</tbody>
+										</table>
+										<span> <span *ngIf="!isPrint">
+												<h6 id="PageNate">No.of Records Per Page</h6> <span><input
+													class="PaginationValue col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1"
+													type="number" [(ngModel)]="paginateValue" [min]='1'
+													[max]="CaseHistoryCaseArray.length" /></span>
+										</span> <span> <pagination-controls
+													(click)="PaginationController(p, paginateValue,CaseHistoryCaseArray.length)"
+													*ngIf="!isPrint" class="pull-right"
+													(pageChange)="p =$event"></pagination-controls>
+										</span>
+										</span>
+
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					</mat-card>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

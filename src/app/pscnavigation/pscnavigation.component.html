@@ -1,0 +1,18 @@
+<app-top-nav (LeftNavHomeEmitter)="OnHome($event)"></app-top-nav>
+<div class="container-fluid"> 
+  <div class="row">    
+    <div *ngIf="!IsLeftNav" id="leftContainer" class="col-md-3">
+      <app-left-nav  (LeftNavEmitter)="OnSysAdmin($event)"></app-left-nav>    
+    </div>
+    <div id="rightContainer" class="col-md-9">
+      <div id="contentContainer">        
+       <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm12 col-xs-12">
+    <app-footer></app-footer>
+  </div>
+  </div>
+</div>

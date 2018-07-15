@@ -1,0 +1,33 @@
+.unlockbtn{
+    /* margin-left: 100px !important; */
+}
+.unlockbtnUser{
+  /*   margin-left: 250px !important; */
+}
+.PreloaderMessage{
+    /* margin-left: 170px !important; */
+    font-weight: bold;
+    font-size: large;
+}
+.PreloaderAfterMessage{
+    margin-left: 80px !important;
+    font-weight: bold;
+    font-size: large;
+}
+.user-Id-Unlock{
+    padding:0px !important;
+    margin-left:35px !important;
+}
+.unlock{
+	margin-left:100px !important;
+} 
+
+.managementHeader{
+    text-align: center !important;
+    font-size: x-large !important;
+    font-weight: bolder !important;
+}
+
+.res{
+    margin-left:25px;
+}

@@ -1,0 +1,6 @@
+.chart-legend {
+	    display: true;
+		position: 'top';
+		fullWidth: true; 
+		reverse: false;
+}

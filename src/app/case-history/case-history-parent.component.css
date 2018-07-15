@@ -1,0 +1,34 @@
+.CaseHistoryTableHeader, .CaseHistoryTable{
+    text-align: center !important;
+}
+#iByCaseno{ 
+    font-size:large !important;
+    font-weight: bolder !important;
+    color: grey; 
+}
+.CaseHistoryTableFormHeader{
+    text-align: center !important;
+    font-weight: bold !important; 
+}
+#PageNate{
+  float:left !important;  
+}
+.Notfound{
+	color: red !important;
+	margin-left: 40% !important;
+	font-size: large !important;
+}
+.PaginationValue{
+    margin-left:5px !important;
+    text-align: center !important;
+    font-weight: bold ;
+}
+.NameSpacer{
+    margin-left:5px !important;
+}
+.PreloaderAfterMessage{
+    margin-left: 150px !important;
+    font-weight: bold;
+    font-size: large;
+}
+

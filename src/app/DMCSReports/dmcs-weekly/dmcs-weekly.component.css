@@ -1,0 +1,26 @@
+.DMCS-WeeklyHeader {
+	text-align: center !important;
+	font-weight: bold !important;
+}
+
+.Upload {
+	/*  */
+	padding: 10px 24px; /* Some padding */
+	cursor: pointer; /* Pointer/hand icon */
+	/*  */
+	float: left; /* Float the buttons side by side */
+}
+
+.Heading {
+	text-align: center !important;
+	font-weight: bold !important;
+}
+
+a {
+	cursor: pointer !important;
+}
+
+label {
+	font-size: x-large;
+	font-weight: bolder !important;
+}

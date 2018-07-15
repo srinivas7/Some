@@ -1,0 +1,52 @@
+.InquiryTableHeader, .InquiryTable{
+    text-align: center !important;
+}
+.report{
+margin-left: -30% !important;
+table-layout: auto;
+} 
+
+
+#iByCaseno{ 
+    font-size:large !important;
+    font-weight: bolder !important;
+    color: grey; 
+}
+.InquiryTableFormHeader{
+    text-align: center !important;
+    font-weight: bold !important; 
+}
+#PageNate{
+  float:left !important;  
+}
+.Notfound{
+color: red !important;
+margin-left: 40% !important;
+font-size: large !important;
+}
+.PaginationValue{
+    margin-left:5px !important;
+    text-align: center !important;
+    font-weight: bold ;
+}
+.NameSpacer{
+    margin-left:5px !important;
+}
+.PreloaderMessage{
+    margin-left: 170px !important;
+    font-weight: bold;
+    font-size: large;
+}
+.header{
+text-align: center !important;
+font-weight: bold ; 
+}
+#column{
+  max-width: 20px !important;
+  overflow-x: auto;
+  /* word-wrap: break-word !important; */  
+}
+
+#style{
+ word-break:break-all !important; 
+}  

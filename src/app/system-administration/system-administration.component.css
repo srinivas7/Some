@@ -1,0 +1,60 @@
+.systemHeader{
+	margin-left: 500px !important;
+	font-weight: bold !important;
+}
+.isTableDesign{	
+	margin-left : 110px !important;
+	width: 100% !important;
+	}
+.UserListTable{
+	max-width:280px;
+	width : 100% !important;
+	float:left !important;
+	
+}
+.SelectedR{ cursor: pointer !important; width: 100% !important;}
+.SelectedReport{
+	background-color: #01539c !important;
+	color: white !important;	
+	width:100% !important;
+}
+.SelectedSeq{
+visibility: hidden !important;
+/* display:none;  */
+}
+.UserTable{
+	margin-left: 80px !important;
+}
+table{
+	 max-width:980px !important;
+    table-layout:fixed !important;
+    margin:auto !important;
+}
+tr, th{
+	text-align:center !important;
+}
+tr, td{
+	text-align: justify !important;
+}
+#bgcolor{
+	background: #f4f4f4 !important;
+}
+.SysAdminUsersList{
+	overflow-y: scroll !important;
+	max-height:300px;
+	height: 100%;
+}
+
+a{
+	cursor:pointer !important; 
+}
+.SysAdminBtn{
+	width:60% !important;
+}
+.SysBtn{
+	margin-top:100px !important;
+	float: left !important;
+}
+td{
+	text-align:center !important;
+}

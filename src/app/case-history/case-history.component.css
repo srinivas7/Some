@@ -1,0 +1,49 @@
+.InquiryHeader{
+    text-align: center !important;
+    font-weight: bold !important; 
+}
+.InquiryBtn{
+    width:50% !important;
+}
+.InquiryContent{ 
+    text-align: center !important;
+}
+.example-form {
+    min-width: 100px;
+    max-width: 500px;
+    width: 100%;
+  }
+  .InquiryBtns{
+      width: 100% !important;
+  }
+  
+.example-full-width {
+    width: 100%;
+  }
+.ErrorMessage{
+    color:red;
+}
+.CaseForm{
+    width:100% !important;
+}
+
+.SelectionForm{
+    width: 100% !important;
+    font-size: large !important;
+    /* text-align: center !important; */
+}
+ mat-option{    
+    font-size: small !important;
+}
+.additional-service-selection{
+    opacity: 0.75;
+    font-size: 0.75em;
+}
+.GetServices{
+    padding-bottom:10px !important;
+    width:100% !important;
+}
+.selected-list[_ngcontent-c11]   .c-list[_ngcontent-c11]   .c-token[_ngcontent-c11]{
+    background: rgb(245, 246, 247) !important;
+    color: rgb(12, 12, 12) !important;
+}

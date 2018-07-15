@@ -1,0 +1,319 @@
+<div class="row">
+	<div class="container container-fluid">
+		<app-inquiry (SelectedServiceValue)=" OnGetCaseChange($event)"
+			(SelectedServiceValueNoCaseNum)="OnGetNoCaseChnage($event)"
+			(SelectedServiceReset)="OnGetReset($event)"></app-inquiry>
+	</div>
+</div>
+<br />
+<br />
+<div class="row">
+	<div class="container-fluid">
+		<div class="col-lg-7 col-md-7 col-sm-12 col-xs- 12"
+			*ngIf="isRequested" class="PreloaderMessage">
+			<span>Processing Request.....Please Wait!!!</span>
+		</div>
+		<div class="row" class="report" id="NoCaseDataParent">
+			<div *ngIf="viewList && viewList.length > 0"
+				class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10"
+				#NoCaseData>
+				<table class="table table-responsive table-bordered" id="inquiry">
+					<thead>
+						<tr>
+							<th>
+								<div class="pull-right">
+									<!-- <button class="btn btn-default"
+(click)="OnPdfDownload(viewList,false)">Save As Pdf</button> -->
+									<button class="btn btn-default"
+										(click)="OnExcelDownloadForNoCase(viewList)">Save As
+										Excel</button>
+									<button class="btn btn-default"
+										(click)="Onprint(viewList,false)">Print</button>
+								</div>
+							</th>
+						</tr>
+						<tr>
+							<th>
+								<h4 class="header">INQUIRY SUMMARY</h4>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<table class="table table-responsive table-bordered" id="column">
+									<thead>
+										<tr>
+											<th>Case Number</th>
+											<th>First Name</th>
+											<th>Last Name</th>
+											<th>Social Security</th>
+											<th>Open Date</th>
+											<th>Close Date</th>
+											<th>Close Reason</th>
+											<th>Status</th>
+											<th>Class 1</th>
+											<th>Legal Amount Due</th>
+											<th>Schedule Payment</th>
+											<th>Status Code</th>
+											<th colspan='1'>Status Description</th>
+											<th>Status Date</th>
+											<th>Address</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr
+											*ngFor="let i of viewList | paginate:{itemsPerPage: paginateValue,totalItems:viewList.length, currentPage: p}">
+											<td>{{i.caseNumber}}</td>
+											<td>{{i.firstName}}</td>
+											<td>{{i.lastName}}</td>
+											<td>{{i.ssn}}</td>
+											<td>{{i.openDT}}</td>
+											<td>{{i.closeDT}}</td>
+											<td>{{i.closeReason}}</td>
+											<td>{{i.status}}</td>
+											<td>{{i.class1}}</td>
+											<td>{{i.legalAmountDue | currency}}</td>
+											<td>{{i.schedulePayment}}</td>
+											<td>{{i.statusCode}}</td>
+											<td id="style">{{i.statusDesc}}</td>
+											<td>{{i.statusDate}}</td>
+											<td id="style">{{i.address}}</td>
+										</tr>
+
+									</tbody>
+								</table>
+
+							</td>
+
+						</tr>
+
+					</tbody>
+
+				</table>
+
+				<span> <span *ngIf="!isPrint">
+						<h6 id="PageNate">No.of Records Per Page</h6> <span><input
+							class="PaginationValue col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1"
+							type="number" [(ngModel)]="paginateValue" [min]='1'
+							[max]="viewList.length" /></span>
+				</span> <span> <pagination-controls
+							(click)="PaginationController(p, paginateValue,viewList.length)"
+							*ngIf="!isPrint" class="column" class="pull-right"
+							(pageChange)="p =$event"></pagination-controls>
+
+				</span>
+
+				</span>
+
+			</div>
+
+		</div>
+
+		<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12" *ngIf="isTable">
+			<b class="Notfound">There is no record found </b>
+
+		</div>
+
+		<div id="InquiryTableParent">
+
+			<div class="row" *ngIf="InquiryCaseArray.length > 0">
+				<div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-xs-12">
+					<div class="pull-right">
+
+						<button class="btn btn-default"
+							(click)="OnExcelDownload(InquiryCaseArray)">Save As
+							Excel</button>
+
+						<button class="btn btn-default"
+							(click)="Onprint(InquiryCaseArray,true)">Print</button>
+
+					</div>
+				</div>
+                <br/><br/>
+				<div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-xs-12"
+					#InquireTable>
+
+					<mat-card>
+
+					<div class="row">
+
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+							<div
+								class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 InquiryTableFormHeader">
+
+								<h1 id="iByCaseno">{{InquiryHeader}}</h1>
+
+							</div>
+
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+								<span class="pull-left btn btn-default"> FirstName
+
+									:&nbsp; {{InquiryfirstName}} </span> <span
+									class="NameSpacer pull-left btn btn-default"> LastName
+
+									:&nbsp; {{InquirylastName}}</span> <span
+									class="NameSpacer pull-left btn btn-default"> SSN:
+
+									&nbsp; {{iSSN}}</span> <span
+									class="NameSpacer pull-left btn btn-default"> Status:
+
+									&nbsp; {{InquiryStatus}}</span>
+
+
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<br />
+
+
+
+					<table class="table table-responsive table-bordered">
+
+						<thead>
+
+							<tr>
+
+								<!-- <th>
+
+									 <div class="pull-right">
+
+										<button class="btn btn-default"
+											(click)="OnExcelDownload(InquiryCaseArray)">Save As
+											Excel</button>
+
+										<button class="btn btn-default"
+											(click)="Onprint(InquiryCaseArray,true)">Print</button>
+
+									</div> 
+
+								</th> -->
+
+							</tr>
+
+							<tr>
+
+								<th>
+
+									<h4 class="InquiryTableFormHeader">Inquiry Summary</h4>
+
+								</th>
+
+							</tr>
+
+						</thead>
+
+						<tbody>
+
+							<tr>
+
+								<td>
+									<!-- start -->
+
+									<div class="col-xl-10 col-lg-12 col-md-10 col-sm-12 col-xs-12">
+
+										<table class="table table-responsive table-bordered">
+
+											<thead>
+
+												<tr>
+
+													<th class="InquiryTableHeader">Case Number</th>
+
+													<th class="InquiryTableHeader">Class 1</th>
+
+													<!--  <th class="InquiryTableHeader">First Name</th>
+<th class="InquiryTableHeader">Last Name</th> -->
+
+													<th class="InquiryTableHeader">Legal Amount Due</th>
+
+													<th class="InquiryTableHeader">Schedule Payment</th>
+
+													<th class="InquiryTableHeader">Status Code</th>
+
+													<th class="InquiryTableHeader">Status Description</th>
+
+													<th class="InquiryTableHeader">Status Date</th>
+
+													<th class="InquiryTableHeader">Address</th>
+
+												</tr>
+
+											</thead>
+
+											<tbody>
+
+												<tr
+													*ngFor="let i of InquiryCaseArray| paginate:{itemsPerPage: paginateValue,totalItems:InquiryCaseArray.length, currentPage: p}">
+
+													<td class="InquiryTable">{{i.caseNumber}}</td>
+
+													<td class="InquiryTable">{{i.class1}}</td>
+
+													<!--  <td class="InquiryTable">{{i.firstName}}</td>
+<td class="InquiryTable">{{i.lastName}}</td>  -->
+
+													<td class="InquiryTable">{{i.legalAmountDue |
+
+														currency}}</td>
+
+													<td class="InquiryTable">{{i.schedulePayment}}</td>
+
+													<td class="InquiryTable">{{i.statusCode}}</td>
+
+													<td class="InquiryTable">{{i.statusDesc}}</td>
+
+													<td class="InquiryTable">{{i.statusDate}}</td>
+
+													<td class="InquiryTable">{{i.address}}</td>
+
+												</tr>
+
+											</tbody>
+
+										</table>
+
+										<!-- <span> <span *ngIf="!isPrint">
+
+												<h6 id="PageNate">No.of Records Per Page</h6> <span><input
+													class="PaginationValue col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-1"
+													type="number" [(ngModel)]="paginateValue" [min]='1'
+													[max]="InquiryCaseArray.length" /></span>
+										</span> <span> <pagination-controls
+													(click)="PaginationController(p, paginateValue,InquiryCaseArray.length)"
+													*ngIf="!isPrint" class="pull-right"
+													(pageChange)="p =$event"></pagination-controls>
+
+										</span>
+
+										</span> -->
+
+
+
+									</div> <!-- end -->
+
+								</td>
+
+							</tr>
+
+						</tbody>
+
+					</table>
+
+					</mat-card>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>

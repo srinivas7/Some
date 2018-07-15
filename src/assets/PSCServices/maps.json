@@ -1,0 +1,20 @@
+[
+    {
+    "debtType": "NHSC",
+    "regionCode": "01",
+    "balance": "234343434.53",
+    "debtOriginalLoan": "334343434.63",
+    "debtPrincipal": "434343434.73",
+    "debtIntrestCharges": "534343434.83",
+    "date":"2018-03-07"
+    },
+    {
+    "debtType": "CT",
+    "regionCode": "02",
+    "balance": "264343434.53",
+    "debtOriginalLoan": "454343434.53",
+    "debtPrincipal": "74343434.53",
+    "debtIntrestCharges": "814343434.53",
+    "date":"2018-03-07"
+    }
+]

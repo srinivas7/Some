@@ -1,0 +1,61 @@
+<div class="parent abc">
+<div class="row"  #some>
+	<div class="container container-fluid">
+		<mat-card class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12">
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="row">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<h3 class="InquiryHeader">CASE HISTORY</h3>
+				</div>
+			</div>
+			<br /> 
+			<div [ngClass]>some element</div>
+			 <div class="row" *ngIf="ServiceBool.InquiryService">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12">
+						<mat-card
+							class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<form class="example-form" (ngSubmit)="GetCase(InquiryList)"
+							#InquiryList="ngForm" novalidate>
+							<div *ngIf="ServiceBool.CaseHistoryCaseNo">
+								<mat-form-field class="example-full-width"> 
+								<input matInput placeholder="CASE NUMBER:"
+									[(ngModel)]="CaseHistoryCaseNo" name="CaseHistoryCaseNoInput"
+									#CaseHistoryCaseNoInput="ngModel" [minlength]= "CaseNoLength" [maxlength]="CaseNoLength"
+									required /> </mat-form-field>
+								<span
+									*ngIf="!CaseHistoryCaseNoInput.valid && CaseHistoryCaseNoInput.touched">
+									<span class="help-block ErrorMessage"
+									*ngIf="CaseHistoryCaseNoInput.errors.required">Case No
+										Required</span> <span class="help-block ErrorMessage"
+									*ngIf="CaseHistoryCaseNoInput.errors.minlength">Case No
+										Should be of minimum 8 characters</span> <span
+									class="help-block ErrorMessage"
+									*ngIf="CaseHistoryCaseNoInput.errors.maxlength">Case No
+										Should be of maximum 8 characters</span>
+								</span>
+							</div> 
+							
+							
+							<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4">
+								<button class="btn btn-primary InquiryBtns" type="submit"
+									[disabled]="!InquiryList.valid">Submit</button>
+							</div>
+						</form>
+						<span class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-3">
+							<button class="btn btn-warning InquiryBtns"
+								(click)="OnReset(); InquiryList.reset()">Reset</button>
+						</span> <br />
+
+						<br />
+						<br />
+
+						</mat-card>
+					</div>
+				</div>
+			</div>
+			<br />
+		</div>
+		</mat-card>
+	</div>
+</div>

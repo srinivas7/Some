@@ -1,0 +1,32 @@
+[
+    {
+        "department": "ACF",
+        "status": "ATC",
+        "legalBalance": "364549555.54",
+        "totalCases": "250"
+    },
+    {
+        "department": "ACF",
+        "status": "SKIP TRACE",
+        "legalBalance": "8056151.73",
+        "totalCases": "24"
+    },
+    {
+        "department": "ACF",
+        "status": "BAN",
+        "legalBalance": "3733164.02",
+        "totalCases": "5"
+    },
+    {
+        "department": "ACF",
+        "status": "AT H",
+        "legalBalance": "943140.09",
+        "totalCases": "191"
+    },
+    {
+        "department": "ACF",
+        "status": "AT T",
+        "legalBalance": "576458.93",
+        "totalCases": "1100"
+    }
+]

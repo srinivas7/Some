@@ -1,0 +1,14 @@
+<div>
+<mat-tab-group>
+<mat-tab label={{ErrorReport.ErrorMessageTitle}}>
+<mat-card>
+<mat-card-content>
+<p id="errorMsg">{{ErrorReport.ErrorMessage}}&#33;</p>
+</mat-card-content>
+<mat-card-footer>
+<button class="btn btn-primary" (click)="onClose()">Close</button>
+</mat-card-footer>
+</mat-card>
+</mat-tab>
+</mat-tab-group>
+</div>

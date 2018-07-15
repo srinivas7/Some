@@ -1,0 +1,106 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+ @import url('../node_modules/bootstrap/dist/css/bootstrap.min.css'); 
+ @import url('../node_modules/font-awesome/css/font-awesome.css');  
+/* @import url('assets/styles/bootstrap.min.css');
+@import url('assets/styles/font-awesome.css') ;*/
+body{
+    overflow-x: hidden !important;
+    /* overflow-y: hidden !important; */
+}
+header {
+    padding: 15px;
+}
+header #projName h1 {
+	color: #01539c;
+    font-size: large;
+    font-weight: bold;
+    margin-top: 14px;
+}
+#logo{
+    float: left;
+    margin-right: 210px;
+}
+
+#user {
+    float: left;
+    margin-right: 20px;
+}
+
+#logout {
+    float: left;
+}
+
+#userLogoutContainer {
+    display:block;
+    clear: both;
+    float: right;
+    margin-right: 20px;
+    margin-top: -18px;
+}
+
+#topNavigation{
+    margin-bottom: 20px;
+    background: #DCDCDC !important;
+   
+}
+
+#leftNavigation{
+	color:#01539c !important;
+    
+    background: #DCDCDC;
+}
+#email {
+    margin-bottom: 10px;
+    width: 250px;
+}
+
+#toGetPDF submit{
+    margin-top: 16px;
+    background: #e6edb1;
+}
+
+#help {
+    margin-top: 16px;
+    background: #DCDCDC;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#content {
+    margin-top: 16px;
+    height: 184px;
+    overflow-y: auto;
+}
+
+#carousel img{
+    width: 980px;
+    height: 400px;
+}
+
+#copyrights {
+    margin-top: 16px;
+    background: #78a5ed;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.center{text-align:center;}
+.centerAlign{margin: 0 auto;}
+.displayBlock{display:block;}
+
+.custom-class-example {
+    color: black;
+}
+.custom-class-example .c-token{
+    color: black!important;
+    background: #f4f4f4 !important;
+}
+.custom-class-example .pure-checkbox label::before {
+    color: black !important;
+    border-color: #f4f4f4 !important;
+}
+.custom-class-example .pure-checkbox input[type="checkbox"]:checked + label[_ngcontent-c1]:before {
+    color: black !important;
+    background:#f4f4f4 !important;
+}

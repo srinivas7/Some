@@ -1,0 +1,9 @@
+ #reportsleftNavigation{
+ font-weight: bold;
+ background: #DCDCDC;
+ font-size: large;
+ text-align:  justify !important;
+ }
+.dynamicReportLeftNav{
+	cursor:pointer !important;
+}

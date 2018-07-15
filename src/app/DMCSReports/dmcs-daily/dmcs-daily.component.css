@@ -1,0 +1,20 @@
+.DMCS-DailyHeader{
+    text-align: center !important;
+    font-weight: bold !important;
+}
+#dmcs-Daily{
+	color: red !important;
+	font-weight: lighter !important!;
+}
+a{
+	cursor:pointer !important; 
+}
+label{
+	font-size:x-large !important;
+	font-weight: bolder !important;
+}
+/deep/.mat-tab-label, /deep/.mat-tab-label-active{
+	font-size:larger !important;
+	font-weight: bold !important;
+	color:black !important;
+}

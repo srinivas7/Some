@@ -1,0 +1,10 @@
+#leftNavigation{
+    font-weight: bold;
+    font-size: large;
+}
+#OnReports{
+	cursor: pointer;;
+}
+a{
+	cursor:pointer !important;
+}

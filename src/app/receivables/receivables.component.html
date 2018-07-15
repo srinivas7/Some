@@ -1,0 +1,44 @@
+<nav class="navbar">
+  <div class="baner-title">
+    <h3>COLLECTIONS AND BILLING </h3>
+    </div>
+</nav>
+
+<div id="main">
+  <div class="mybox" id="colorsbox">
+      <div class="content-title">
+        Collected by --- {{currentDepartment}}
+      </div>  
+      <div>
+        <table border="1" *ngIf="tableView">
+            <thead>
+              <tr>
+              <th>Department</th>
+              <th>Status</th>
+              <th>Amount</th>				
+              </tr>
+            </thead> 
+            <tbody *ngFor="let row of tableView;">				 				  			  
+              <tr >
+              <td>{{row.department}}</td>	
+              <td>{{row.status}}</td>	
+              <td>{{row.amount}}</td>						
+              </tr>				 
+            </tbody>
+        </table> 
+      </div>
+      <div >
+        <button labels="barChartLabels" (click)="renderPreviousGraph(currentDepartment)">previous</button>
+        <button labels="barChartLabels" (click)="renderNextGraph(currentDepartment)">next</button>
+        <fusioncharts
+        [width]="width"
+        [height]="height"
+        [type]="type"
+        [dataFormat]="dataFormat"
+        [dataSource]="dataSource">
+        </fusioncharts>
+      </div>
+
+  </div>
+  <br/>  
+</div>

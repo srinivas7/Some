@@ -1,0 +1,17 @@
+#Progressbar {
+    width: 100%;
+    background-color: #ddd;
+  }
+  
+  #Progress {
+    width: 1%;
+    height: 30px;      
+    background-color: #4CAF50;
+  }
+  #ProgressInfo{
+    text-align: center !important;
+    font-family: "Times NewRoman";
+    margin-left: 35px !important;
+    margin-top:10px !important;    
+    font-weight: bolder;
+  }

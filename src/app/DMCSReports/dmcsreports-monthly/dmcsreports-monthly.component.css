@@ -1,0 +1,20 @@
+.DMCS-MonthlyHeader{
+    text-align: center !important;
+    font-weight: bold !important;
+}
+.Upload {
+
+/*  */padding: 10px 24px; /* Some padding */
+
+cursor: pointer; /* Pointer/hand icon */
+/*  */float: left; /* Float the buttons side by side */
+
+}
+
+a{
+	cursor:pointer !important; 
+}
+/deep/.mat-tab-label, /deep/.mat-tab-label-active{
+	font-size:larger !important;
+	font-weight: bold !important;
+}

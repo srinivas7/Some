@@ -1,0 +1,146 @@
+<div class="row">
+	<div class="container container-fluid">
+		<mat-card class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12">
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="row">
+				<h3 class="DMCS-DailyHeader">DMCS Daily Reports</h3>
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<mat-tab-group> <mat-tab class="dmcs-Daily"
+						label="Top Processing"> <mat-card
+						class="col-xl-12 col-lg-12 col-md-12 col-sm-12 co-xs-12">
+					<div>
+						<h4>{{DMCDailyTitle.TopProcessing}}</h4>
+						<button class="btn btn-primary pull-right"
+							*ngIf="DMCSDailyTOPUploadBtn" (click)="DmcsUpload('DMCSDailyTOP')">Upload</button>
+					</div>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>File No</th>
+								<th>Report Name</th>
+								<th>File Size</th>
+								<th>Modified Time</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let i of DMCSDailyTOP, let iIndex = index">
+								<td>{{i.listOrder}}</td>
+								<td><a (click)="DownloadPDF(i)"> {{i.fileDesc}}</a>
+								 <button *ngIf="isDeleteYN" class="btn btn-danger" (click)="alertMessage(i)">&#9851;</button></td>
+								<td>{{i.sFileSize}}</td>
+								<td>{{i.lastModified}}
+							</tr>
+						</tbody>
+					</table>
+					</mat-card> </mat-tab> <mat-tab label="Cross Reports I"> <mat-card
+						class="col-xl-12 col-lg-12 col-md-12 col-sm-12 co-xs-12">
+					<div>
+						<h4>{{DMCDailyTitle.CORP1}}</h4>
+						<button class="btn btn-primary pull-right"
+							*ngIf="DMCSDailyCROR1UploadBtn" (click)="DmcsUpload('DMCSDailyCROR1')">Upload</button>
+					</div>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>File No</th>
+								<th>Report Name</th>
+								<th>File Size</th>
+								<th>Modified Time</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let i of DMCSDailyCROR1">
+								<td>{{i.listOrder}}</td>
+								<td><a (click)="DownloadPDF(i)"> {{i.fileDesc}}</a>
+								 <button *ngIf="isDeleteYN" class="btn btn-danger" (click)="alertMessage(i)">&#9851;</button></td>
+								<td>{{i.sFileSize}}</td>
+								<td>{{i.lastModified}}
+							</tr>
+						</tbody>
+					</table>
+					</mat-card> </mat-tab> <mat-tab label="Cross Reports II"> <mat-card
+						class="col-xl-12 col-lg-12 col-md-12 col-sm-12 co-xs-12">
+					<div>
+						<h4>{{DMCDailyTitle.CORP2}}</h4>
+						<button class="btn btn-primary pull-right"
+							*ngIf="DMCSDailyCROR2UploadBtn" (click)="DmcsUpload('DMCSDailyCROR2')">Upload</button>
+					</div>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>File No</th>
+								<th>Report Name</th>
+								<th>File Size</th>
+								<th>Modified Time</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let i of DMCSDailyCROR2">
+								<td>{{i.listOrder}}</td>
+								<td><a (click)="DownloadPDF(i)"> {{i.fileDesc}}</a>
+								 <button *ngIf="isDeleteYN" class="btn btn-danger" (click)="alertMessage(i)">&#9851;</button></td>
+								<td>{{i.sFileSize}}</td>
+								<td>{{i.lastModified}}
+							</tr>
+						</tbody>
+					</table>
+					</mat-card> </mat-tab> <mat-tab label="Collections-Detailed"> <mat-card
+						class="col-xl-12 col-lg-12 col-md-12 col-sm-12 co-xs-12">
+					<div>
+						<h4>{{DMCDailyTitle.COD}}</h4>
+						<button class="btn btn-primary pull-right"
+							*ngIf="DMCSDailyCODUploadBtn" (click)="DmcsUpload('DMCSDailyCOD')">Upload</button>
+					</div>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>File No</th>
+								<th>Report Name</th>
+								<th>File Size</th>
+								<th>Modified Time</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let i of DMCSDailyCOD">
+								<td>{{i.listOrder}}</td>
+								<td><a (click)="DownloadPDF(i)"> {{i.fileDesc}}</a>
+								 <button *ngIf="isDeleteYN" class="btn btn-danger" (click)="alertMessage(i)">&#9851;</button></td>
+								<td>{{i.sFileSize}}</td>
+								<td>{{i.lastModified}}
+							</tr>
+						</tbody>
+					</table>
+					</mat-card> </mat-tab> <mat-tab label="Collections-Summary"> <mat-card
+						class="col-xl-12 col-lg-12 col-md-12 col-sm-12 co-xs-12">
+					<div>
+						<h4>{{DMCDailyTitle.COS}}</h4>
+						<button class="btn btn-primary pull-right"
+							*ngIf="DMCSDailyCOSUploadBtn" (click)="DmcsUpload('DMCSDailyCOS')">Upload</button>
+					</div>
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>File No</th>
+								<th>Report Name</th>
+								<th>File Size</th>
+								<th>Modified Time</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr *ngFor="let i of DMCSDailyCOS">
+								<td>{{i.listOrder}}</td>
+								<td><a (click)="DownloadPDF(i)"> {{i.fileDesc}}</a>
+								 <button *ngIf="isDeleteYN" class="btn btn-danger" (click)="alertMessage(i)">&#9851;</button></td>
+								<td>{{i.sFileSize}}</td>
+								<td>{{i.lastModified}}
+							</tr>
+						</tbody>
+					</table>
+					</mat-card> </mat-tab> \ </mat-tab-group>
+				</div>
+			</div>
+			<br />
+		</div>
+		</mat-card>
+	</div>
+</div>

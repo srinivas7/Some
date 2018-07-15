@@ -1,0 +1,20 @@
+#PSCLogo{
+    top:0px !important;
+    left:0px !important;
+}
+#projTitle{
+    color:#01539c;
+    font-size: xx-large;
+    font-weight: bold;
+  
+}
+.userSession{
+    color: #01539c;
+    font-size: medium;
+
+}
+.userDetails{ float: right !important; }
+.UserOptions{ float: right !important;}
+.PscSearchForm{
+    margin-top:10px !important;
+}

@@ -1,0 +1,137 @@
+#topNavigation{
+    font-weight: bold;
+    background: #DCDCDC;
+}
+.DMCSUserForm{
+    display:none !important;
+}
+
+.glyphicon-home{
+  color:#01539c !important;
+  font-size:x-large !important;
+}
+.DMCSNavItems{
+    color:#01539c !important;
+    font-weight: bold;
+}
+.BrandName1{
+    font-weight:  bold !important;
+    color:#01539c !important;
+    display:none !important;
+}
+.BrandName2{
+    font-weight:  bold !important;
+    color:#01539c !important;
+    display:none !important;  
+}
+#DMCSTopNav{
+	background: #DCDCDC;
+}
+#DMCSMenuItems1{
+   display: none !important;
+}
+#PSCLogo{
+    top:0px !important;
+    left:-20px !important;
+    height: 40px !important;
+    width: 60px !important; 
+    padding-bottom:10px !important;
+   display:none!important;
+}
+.container, .container-fluid{
+    padding:0px !important;
+}
+#GOHOme{
+	cursor: pointer;
+	font-size:large !important;
+	font-weight: bold !important;
+	color:#01539c;
+	
+}
+@media screen and (max-width:990px){
+    #DMCSMenuItems1{
+       display:inline !important;
+    }
+    .container, .container-fluid{
+        padding:0px !important;
+    }
+    #PSCLogo{
+        top:0px !important;
+        left:-20px !important;
+        height: 40px !important;
+        width: 60px !important; 
+        padding-bottom:10px !important;
+       display:initial !important;
+    }
+    #GOHOme{
+	cursor: pointer;
+	font-size:x-large !important;
+	color:#01539c;
+}
+}
+@media screen and (max-width:1199px) {
+    .BrandName1{
+        font-weight:  bold !important;
+        color:#01539c !important;
+        display: inline !important;
+    }
+    #PSCLogo{
+        top:0px !important;
+        left:-20px !important;
+        height: 40px !important;
+        width: 60px !important; 
+        padding-bottom:10px !important;
+       display:initial !important;
+    }
+    .DMCSUserForm{
+       display: inline !important;
+    }
+    #DMCSHeader{
+        display:none !important;
+    }
+    #DMCSTopNav{
+        /* top:-130px !important; */
+    }
+    .container, .container-fluid{
+        padding:0px !important;
+    }
+    #GOHOme{
+	cursor: pointer;
+	font-size:large !important;
+	color:#01539c;
+}
+}
+@media screen and (max-width:500px){
+.BrandName2{
+    font-weight:  bold !important;
+    color:#01539c !important;
+    display:inline !important;
+}
+.BrandName1{
+    font-weight:  bold !important;
+    color:#01539c !important;
+    display: none !important;
+}
+#PSCLogo{
+    top:0px !important;
+    left:-20px !important;
+    height: 40px !important;
+    width: 60px !important; 
+    visibility: visible !important;
+}
+.DMCSUserForm{
+    display:inline !important;
+}
+#DMCSHeader{
+   display: none !important;
+}
+
+.container, .container-fluid{
+    padding:0px !important;
+}
+#GOHOme{
+	cursor: pointer;
+	font-size:large !important;
+	color:#01539c;
+}
+}

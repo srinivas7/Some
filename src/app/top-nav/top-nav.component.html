@@ -1,0 +1,64 @@
+<nav id="DMCSHeader">
+   
+    <app-header></app-header>
+
+</nav>
+<nav id="DMCSTopNav" class="navbar navbar-fixed navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>  
+        <span class="navbar-brand">
+           <span class="BrandLogo">
+              <img id="PSCLogo" src="assets/images/psc.png" alt="alt test if needed"/></span> 
+              <span class="BrandName1">
+                  Debt Management And Collection System</span>
+              <span class="BrandName2">DMCS</span> 
+        </span>  
+      </div>  
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+        <ul id="DMCSMenuItems1" class="nav navbar-nav">             
+          <li class="DMCSNavItems"><a routerLink="Inquiry">Inquiry</a></li>
+          <li class="DMCSNavItems"><a routerLink="casehistory">Case History</a></li>
+          <li class="DMCSNavItems"><a routerLink="Reports">Reports</a></li>
+          <li class="DMCSNavItems"><a routerLink="UserReports">User Reports</a></li>
+          <li class="DMCSNavItems"><a routerLink="UserIdUnlockComponent">User ID Unlock</a></li>    
+          <li class="DMCSNavItems"><a routerLink="graphRepresentation">Graphs</a></li>     
+        </ul> 
+        <!-- <form class="navbar-form DMCSUserForm" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>       -->
+        <ul class="nav navbar-nav navbar-right">         
+          <li class="DMCSUserForm">            
+                  <a class="userDetails" routerLink="#">
+                    <label>User:</label> {{UserName}}	
+                  </a>
+          </li>
+          <li class="DMCSUserForm">                  
+                  <a id="logOff" class="btn btn-info btn-sm" (click)="OnLogOff()" >LOG OUT</a>                                 
+          </li>
+         <li><a id="GOHOme" (click)="OnGoHome()">&#72;&#x4f;&#77;&#69;</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- <nav id="topNavigation" class="col-md-12">
+  <ul class="nav nav-pills">
+    <li class="pull-right"></li>
+    <!-- <li><a href="#">Batch Reports</a></li>
+    <li><a href="#">Financial Reports</a></li>
+    <li><a href="#">Admin Reports</a></li>
+    <li><a href="#">Management Reports</a></li>
+    <li><a routerLink="Dashboard">Dashboard</a></li> -->
+    <!-- <li><a href="#">PDF Download</a></li> -->
+  <!-- </ul> -->
+<!-- </nav> --> 

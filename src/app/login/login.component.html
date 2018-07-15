@@ -1,0 +1,82 @@
+<app-psclogin-header></app-psclogin-header>
+<div class="row">
+  <div class="container container-fluid">   
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <h2 class="login-heading">Welcome to DMCS</h2>
+    <mat-card class="LoginContainer">        
+            <h3 class="Login-Form-header">Login to DMCS</h3>        
+        <div class="row">
+        <div class="">         
+          <form class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12" [formGroup]="LoginFormGroup" novalidate>
+            <div class="col-xl-6 col-xl-offset-3 col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-xs-12">
+           <mat-form-field class="login-form-width" formGroupName="LoginForm">
+             <input matInput placeholder="User Name" [(ngModel)]="LoginName" formControlName="LoginUserName"/>
+             <mat-error *ngIf="LoginFormGroup.get('LoginForm.LoginUserName').hasError('required')">
+               User Name is Required
+             </mat-error>
+           </mat-form-field>           
+            </div>
+            <div class="col-xl-6 col-xl-offset-3 col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-xs-12">
+                <mat-form-field class="login-form-width" formGroupName="LoginForm">
+                  <input matInput placeholder="Password" type="password" [(ngModel)]="LoginPassword" formControlName="LoginUserPassword" minlength="8" maxlength="8"/>
+                  <mat-error *ngIf="LoginFormGroup.get('LoginForm.LoginUserPassword').hasError('required')">
+                    User Password is Required
+                  </mat-error>
+                  <mat-error class="Error-login-Message" *ngIf="LoginFormGroup.get('LoginForm.LoginUserPassword').hasError('minlength')">
+                    Password should be of minimum 8 characters
+                  </mat-error>
+                  <mat-error *ngIf="LoginFormGroup.get('LoginForm.LoginUserPassword').hasError('maxlength')">
+                    Password should be of maximum 8 characters
+                  </mat-error>
+                </mat-form-field>           
+                 </div>                
+                 <div class="col-xl-6 col-xl-offset-3 col-lg-6 col-lg-offset-3 col-md-5 col-md-offset-3 col-sm-8 col-xs-12">
+                   <button class="btn btn-primary login-form-width" 
+                   (click)="userLogin()"
+                   [disabled]="!LoginFormGroup.valid">
+                   Login</button>
+                 </div>                               
+          </form> 
+           <div class="col-xl-7 col-xl-offset-3 col-lg-7 col-lg-offset-3 col-md-7 col-md-offset-3 col-sm-8 col-xs-12 invalidLogin">
+           {{invalidLogin}}
+                 <!-- <mat-error *ngIf="invalidLogin">
+                 <h3 class ="badcredentianls">Invalid Username or Password</h3>
+                 </mat-error> -->
+                 </div>         
+        </div>
+        </div>
+        <br/>      
+        <h3 class="Login-Form-header"> <!-- <i class="fa fa-1x fa-chevron-left" aria-hidden="true"></i> -->
+        <!--   <i class="fa fa-1x fa-chevron-left" aria-hidden="true"></i> -->&#10094; &#10094; &#9670;
+         <!--  <i class="fa fa-1x fa-chevron-left" aria-hidden="true"></i> 
+          <i class="fa fa-1x fa-chevron-left" aria-hidden="true"></i> --> &#10094; &#10094; &#9670;           
+           Warning
+           &#9670; &#10095; &#10095;
+          <!--  <i class="fa fa-1x fa-chevron-right" aria-hidden="true"></i>
+           <i class="fa fa-1x fa-chevron-right" aria-hidden="true"></i> -->
+           &#9670; &#10095; &#10095;
+           <!-- <i class="fa fa-1x fa-chevron-right" aria-hidden="true"></i> 
+           <i class="fa fa-1x fa-chevron-right" aria-hidden="true"></i>   -->
+          </h3>
+          <div class="row">
+            <div class="container container-fluid"> 
+              <div class="col-xl-11 col-lg-11 col-md-11 col-sm-10 col-xs-12">             
+              <p class="PSC-Warn-Msg col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  This is a Government computer system that may be accessed and used only for official Government business by authorized personnel.
+                   Unauthorized access or use of this computer system may subject violators to criminal, civil, and/or administrative action.
+                    All information on this computer system may be intercepted, recorded, read, copied, 
+                    and disclosed by and to authorized personnel for official purposes, including criminal investigations.
+                     Such information includes sensitive data encrypted to comply with confidentiality and privacy requirements.
+                      Access or use of this computer system by any person, whether authorized or unauthorized, constitutes consent to these terms.
+                       There is no right to privacy in this system. 
+                       While all information on government computers is subject to monitoring by authorized personnel,
+                        staff should continue to take appropriate precautions (e.g., encryption) for sensitive data.
+              </p>
+              </div>              
+            </div>
+          </div>   
+    </mat-card>
+  </div> 
+  </div> 
+</div>
+<app-footer></app-footer>

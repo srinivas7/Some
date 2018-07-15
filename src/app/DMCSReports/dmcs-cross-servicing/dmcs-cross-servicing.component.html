@@ -1,0 +1,42 @@
+<div class="row">
+	<div class="container container-fluid">
+		<mat-card class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12">
+		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="row">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<h3 class="DMCS-WeeklyHeader">Cross Servicing Reports</h3>
+					<button *ngIf="isCrossServicingUpload"
+						class="btn btn-primary pull-right"
+						(click)="CrossServicingUploader()">Upload</button>
+					<br />
+					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<table class="table table-bordered table-striped">
+							<thead>
+								<tr>
+									<th>File No</th>
+									<th>Report Name</th>
+									<th>File Size</th>
+									<th>Modified Time</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr *ngFor="let i of Cross">
+									<td>{{i.listOrder}}</td>
+									<td><a (click)="DownloadPDF(i)"> {{i.fileDesc}}</a>
+										<button *ngIf="i.deleteYN" class="btn btn-danger"
+											(click)=" alertMessage(i)">&#9851;</button></td>
+									<td>{{i.sFileSize}}</td>
+									<td>{{i.lastModified}}
+								</tr>
+							</tbody>
+						</table>
+
+
+					</div>
+				</div>
+			</div>
+			<br />
+		</div>
+		</mat-card>
+	</div>
+</div>

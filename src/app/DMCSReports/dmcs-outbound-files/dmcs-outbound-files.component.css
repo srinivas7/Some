@@ -1,0 +1,34 @@
+.DMCS-OutboundHeader{
+    text-align: center !important;
+    font-weight: bold !important;
+}
+.Heading{
+	text-align: center !important;
+    font-weight: bold !important;
+}
+a{
+	cursor:pointer !important; 
+}
+label{
+	font-size:x-large !important;
+	font-weight: bolder !important;
+}
+/deep/.mat-tab-label, /deep/.mat-tab-label-active{
+	font-size:larger !important;
+	font-weight: bold !important;
+	color:black !important;
+}
+.DownArrow{
+	transform: rotate(90deg) !important;
+webkit-transform: rotate(90deg) !important;
+-moz-transform: rotate(90deg) !important;
+-ms-transform: rotate(90deg) !important;
+-o-transform: rotate(90deg) !important;
+}
+.UpArrow{
+	transform: rotate(-90deg) !important;
+webkit-transform: rotate(-90deg) !important;
+-moz-transform: rotate(-90deg) !important;
+-ms-transform: rotate(-90deg) !important;
+-o-transform: rotate(-90deg) !important;	
+}

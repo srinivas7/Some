@@ -1,0 +1,76 @@
+<div class="row">
+	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<mat-card>
+		<div>
+			<form enctype="multipart/form-data">
+				<input class="class-form-group" type="file" id="filePart" />  
+			</form>
+		</div>
+		<br />
+		<div>
+			<form>
+				<table
+					class="table table-bordered table-striped col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<thead>
+						<tr>
+							<th>File Name</th>
+							<th>File Size</th>
+							<th>Progress</th>
+							<th>Actions</th>
+							<th>Upload Done</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="form-group">{{FileName}}</td>
+							<td>{{FileSize? FileSize:0}} Bytes</td>
+							<td>
+								<div class="form-group" id="Progressbar">
+									<div class="form-group"  id="Progress">
+										<span class="form-group" id="ProgressInfo">{{width}}%</span>
+									</div>
+								</div>
+							</td>
+							<td>
+								<button class="btn btn-success" [disabled]="!isFile"
+									(click)="OnFileUpload()">Upload</button>
+								<button class="btn btn-danger" [disabled]="!isFile"
+									(click)="onFileCancel()">Remove</button>
+							</td>
+							<td><span class=""></span></td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
+		<br />
+		<div class="row">
+			<button class="btn btn-primary" (click)="OnClose()">close</button>
+
+		</div>
+		</mat-card>
+	</div>
+</div>
+
+
+<!-- <div class="row">
+    <div class="container">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <mat-card>       
+            <mat-card-content>
+              <div class="row">
+              <input class="class-form-group" type="file"  id="FileUploaderId" (onChange)="OnFileChange($event)"/>
+              </div>
+              <br/>
+              <div class="row">
+                <table class="table table-responsive table-bordered
+                col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">               
+                    
+                   </table>               
+              </div>
+              
+            </mat-card-content>      
+        </mat-card>
+      </div>
+    </div>
+  </div> -->

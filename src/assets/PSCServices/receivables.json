@@ -1,0 +1,157 @@
+[
+    {
+        "department": "ACF",
+        "status": "COLLECTED BY PSC DCC",
+        "amount": "219230.55"
+    },
+    {
+        "department": "CDC",
+        "status": "COLLECTED BY PSC DCC",
+        "amount": "615.99"
+    },
+    {
+        "department": "DEPT OF ED",
+        "status": "COLLECTED BY PSC DCC",
+        "amount": "595880.25"
+    },
+    {
+        "department": "FDA",
+        "status": "COLLECTED BY PSC DCC",
+        "amount": "286432"
+    },
+    {
+        "department": "HRSA",
+        "status": "COLLECTED BY PSC DCC",
+        "amount": "632404.52"
+    },
+    {
+        "department": "IHS",
+        "status": "COLLECTED BY PSC DCC",
+        "amount": "10290.82"
+    },
+    {
+        "department": "NIH",
+        "status": "COLLECTED BY PSC DCC",
+        "amount": "3513.31"
+    },
+    {
+        "department": "OS",
+        "status": "COLLECTED BY PSC DCC",
+        "amount": "4351.23"
+    },
+    {
+        "department": "PSC",
+        "status": "COLLECTED BY PSC DCC",
+        "amount": "569490.34"
+    },
+    {
+        "department": "SAMHSA",
+        "status": "COLLECTED BY PSC DCC",
+        "amount": "5548.83"
+    },
+    {
+        "department": "DEPT OF ED",
+        "status": "DEPARTMENT OF JUSTICE",
+        "amount": "279754.51"
+    },
+    {
+        "department": "HRSA",
+        "status": "DEPARTMENT OF JUSTICE",
+        "amount": "25064.3"
+    },
+    {
+        "department": "IHS",
+        "status": "DEPARTMENT OF JUSTICE",
+        "amount": "1403.26"
+    },
+    {
+        "department": "NIH",
+        "status": "DEPARTMENT OF JUSTICE",
+        "amount": "1856.24"
+    },
+    {
+        "department": "PSC",
+        "status": "DEPARTMENT OF JUSTICE",
+        "amount": "6499"
+    },
+    {
+        "department": "ACF",
+        "status": "PRIVATE COLLECTION AGENCY",
+        "amount": "1236.15"
+    },
+    {
+        "department": "DEPT OF ED",
+        "status": "PRIVATE COLLECTION AGENCY",
+        "amount": "20972.29"
+    },
+    {
+        "department": "FDA",
+        "status": "PRIVATE COLLECTION AGENCY",
+        "amount": "22378.34"
+    },
+    {
+        "department": "HRSA",
+        "status": "PRIVATE COLLECTION AGENCY",
+        "amount": "21872.22"
+    },
+    {
+        "department": "IHS",
+        "status": "PRIVATE COLLECTION AGENCY",
+        "amount": "2126.96"
+    },
+    {
+        "department": "NIH",
+        "status": "PRIVATE COLLECTION AGENCY",
+        "amount": "7633.72"
+    },
+    {
+        "department": "PSC",
+        "status": "PRIVATE COLLECTION AGENCY",
+        "amount": "2963.39"
+    },
+    {
+        "department": "ACF",
+        "status": "TREASURY OFFSET/CROSS SERVICING",
+        "amount": "5607.09"
+    },
+    {
+        "department": "CDC",
+        "status": "TREASURY OFFSET/CROSS SERVICING",
+        "amount": "155.18"
+    },
+    {
+        "department": "CMS",
+        "status": "TREASURY OFFSET/CROSS SERVICING",
+        "amount": "3629517.88"
+    },
+    {
+        "department": "DEPT OF ED",
+        "status": "TREASURY OFFSET/CROSS SERVICING",
+        "amount": "60597.72"
+    },
+    {
+        "department": "FDA",
+        "status": "TREASURY OFFSET/CROSS SERVICING",
+        "amount": "38010.25"
+    },
+    {
+        "department": "HRSA",
+        "status": "TREASURY OFFSET/CROSS SERVICING",
+        "amount": "81770.19"
+    },
+    {
+        "department": "IHS",
+        "status": "TREASURY OFFSET/CROSS SERVICING",
+        "amount": "47502.27"
+    },
+    {
+        "department": "NIH",
+        "status": "TREASURY OFFSET/CROSS SERVICING",
+        "amount": "7375.67"
+    },
+    {
+        "department": "PSC",
+        "status": "TREASURY OFFSET/CROSS SERVICING",
+        "amount": "38319.12"
+    }
+]

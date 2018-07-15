@@ -1,0 +1,80 @@
+<div class="row">
+        <div class="container container-fluid">
+           <mat-card class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                 <div class="row">
+                    <h3 class="managementHeader">MANAGEMENT REPORTS</h3>
+                 </div>
+                 <br/>
+                 <br/>    
+                 <div class="row">
+                    <form class="example-form" [formGroup]="InquiryCaseForm" novalidate>
+                       <!-- <mat-radio-group class="example-radio-group" [(ngModel)]="reportType"> -->
+                       <!-- <mat-radio-button class="example-radio-button" [value]="yearMonth"></mat-radio-button> -->
+                       <mat-card class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                          <input type="radio" [value] =true  checked name="reports" required (change)="getReportType('yearMonth')">
+                          <div>
+                             <label>Date Range</label>
+                             <div  formGroupName="InquiryCaseFormGroup">
+                                <div >
+                                   <!-- <span>
+                                      <ng-select  [items]="FiscalYears" [(ngModel)]="DateRangeFiscalYear" [disabled]="disableYearAndMonth" (ngModelChange)="OnFiscalYear($event)" placeholder="Select The Fiscal Year" formControlName="InquiryDateRangeByYear"></ng-select>
+                                       <span class= "help-block ErrorMessage" *ngIf="InquiryCaseForm.get('InquiryCaseFormGroup.InquiryDateRangeByYear').hasError('required')"> Select The Required Year </span> 
+                                      </span>
+                                      
+                                      <br/>
+                                      <span>
+                                      <ng-select  [allowClear]="true" [(ngModel)]="DateRangeFiscalMonth"  [items]="FiscalMonths" [disabled]="disabled" placeholder="Select The Fiscal Month" formControlName="InquiryDateRangeByMonth" ></ng-select>
+                                       <span class= "help-block ErrorMessage" *ngIf="InquiryCaseForm.get('InquiryCaseFormGroup.InquiryDateRangeByMonth').hasError('required')"> Select The Required Month </span> 
+                                      </span> -->
+                                   <mat-form-field>
+                                      <mat-select placeholder="Select Year" formControlName="InquiryDateRangeByYear">
+                                         <mat-option *ngFor="let year of FiscalYears" [value]="year">
+                                         {{ year }}
+                                         </mat-option>
+                                      </mat-select>
+                                   </mat-form-field>
+                                   <mat-form-field>
+                                      <mat-select placeholder="Select Month" formControlName="InquiryDateRangeByMonth">
+                                         <mat-option *ngFor="let month of FiscalMonths" [value]="month">
+                                         {{ month }}
+                                         </mat-option>
+                                      </mat-select>
+                                   </mat-form-field>
+                                </div>
+                             </div>
+                          </div>
+                          <br/>
+                          <div formGroupName="DatePickerGroup">
+                             <!-- <mat-radio-button class="example-radio-button" [value]="datePicker"></mat-radio-button> -->
+                             <input type="radio" [value] =false name="reports" required (change)="getReportType('datePicker')">
+                             <div >
+                                <span>
+                                   <mat-form-field class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                      <input matInput [matDatepicker]="picker1" placeholder="Fiscal Start Date" formControlName="FiscalStartDateValidation">
+                                      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                      <mat-datepicker #picker1 (selectedChanged)="updateToDate($event)"></mat-datepicker>
+                                   </mat-form-field>
+                                </span>
+                                <span>
+                                   <mat-form-field class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                      <input matInput [matDatepicker]="picker2" [min]="minDate" placeholder="Fiscal End Date"  formControlName="FiscalEndDateValidation">
+                                      <mat-datepicker-toggle matSuffix [for]="picker2" ></mat-datepicker-toggle>
+                                      <mat-datepicker #picker2></mat-datepicker>
+                                   </mat-form-field>
+                                </span>
+                             </div>
+                          </div>
+                          <div>
+                             <button  class="btn btn-success col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-4" [disabled]="!InquiryCaseForm.valid" (click)="OnDownloadExcel()">Generate Report</button>
+                             <button  class="res btn btn-info col-xl-2 col-lg-2 col-md-2 col-sm-2 col-xs-2" (click)="Reset()">Reset</button>
+                          </div>
+                       </mat-card>
+                    </form>
+                    <!-- </mat-radio-group> -->
+                 </div>
+              </div>
+              <br/>               
+           </mat-card>
+        </div>
+     </div>
