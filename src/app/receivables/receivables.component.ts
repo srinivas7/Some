@@ -126,13 +126,15 @@ export class ReceivablesComponent implements OnInit {
   }
   
   renderPreviousGraph(label){
-  
+    console.log(this.dataKeys);
     let cIndex = this.dataKeys.indexOf(label);
     if(cIndex == 0){
       cIndex = this.dataKeys.length - 1;
-    }else if(cIndex < (this.dataKeys.length - 1)){
-      cIndex = 0;
-    }else{
+    }
+    // else if(cIndex < (this.dataKeys.length - 1)){
+    //   cIndex = 0;
+    // }
+    else{
       cIndex -= 1;
     }
     this.i = cIndex;
